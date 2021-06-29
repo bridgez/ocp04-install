@@ -1,0 +1,41 @@
+$TTL 1W
+@       IN      SOA     node34.ocp04.nip.io. root (
+                        2020070700      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+        IN      NS      node34.ocp04
+
+;node34.ocp04 IN      A       9.111.105.34
+node34.ocp04 IN      A       10.0.0.1
+
+;DNS,api,apps
+
+; Proxy item.
+; The api identifies the IP of your load balancer.
+api.ocp04             IN      A       10.0.0.155
+api-int.ocp04         IN      A       10.0.0.155
+;
+; The wildcard also identifies the load balancer.
+ocp04                 IN      A       10.0.0.155
+*.apps.ocp04          IN      A       10.0.0.155
+node155.ocp04         IN      A       10.0.0.155
+;
+; Create an entry for the bootstrap host.
+node159.ocp04 IN      A       10.0.0.159
+;
+; Create entries for the master hosts.
+node160.ocp04         IN      A       10.0.0.160
+node161.ocp04         IN      A       10.0.0.161
+node162.ocp04         IN      A       10.0.0.162
+
+etcd-0.ocp04          IN      A       10.0.0.160
+etcd-1.ocp04          IN      A       10.0.0.161
+etcd-2.ocp04          IN      A       10.0.0.162
+_etcd-server-ssl._tcp.ocp04 86400 IN SRV 0 10  2380 etcd-0.ocp04
+_etcd-server-ssl._tcp.ocp04 86400 IN SRV 0 10  2380 etcd-1.ocp04
+_etcd-server-ssl._tcp.ocp04 86400 IN SRV 0 10  2380 etcd-2.ocp04
+; Create entries for the worker hosts.
+
+

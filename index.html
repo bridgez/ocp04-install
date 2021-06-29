@@ -1,0 +1,5 @@
+#sudo coreos-installer install --ignition-url=http://node34/ignitions/bootstrap.ign /dev/vda --insecure-ignition;
+sudo coreos-installer install --ignition-url=http://node34/ignitions/master.ign /dev/vda --insecure-ignition;
+echo sleep 10
+sleep 10
+poweroff

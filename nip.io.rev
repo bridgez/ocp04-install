@@ -1,0 +1,25 @@
+$TTL 1W
+@       IN      SOA     node34.ocp04.nip.io. root (
+                        2020070700      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+        IN      NS      node34.ocp04.nip.io.
+
+;
+; The syntax is "last octet" and the host must have an FQDN
+; with a trailing dot.
+155     IN      PTR     node155.ocp04.nip.io.
+159     IN      PTR     node159.ocp04.nip.io.
+160     IN      PTR     node160.ocp04.nip.io.
+161     IN      PTR     node161.ocp04.nip.io.
+162     IN      PTR     node162.ocp04.nip.io.
+160     IN      PTR     etcd-0.ocp04.nip.io.
+161     IN      PTR     etcd-1.ocp04.nip.io.
+162     IN      PTR     etcd-2.ocp04.nip.io.
+;
+;
+155     IN      PTR     api.ocp04.nip.io.
+155     IN      PTR     api-int.ocp04.nip.io.
+155     IN      PTR     ocp04.nip.io.
